@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>company</title>
+    </head>
+    <body>
+        <h2>company</h2>
+      <script>const contact1 = {
+  name: 'deepu',
+  phone: '1234566778',
+  email: 'deepu1111112@gamil.com',
+  getInfo: function() {
+    return `Name: ${this.name}, Phone: ${this.phone}, Email: ${this.email}`;
+  }
+};
+
+const contact2 = {
+  name: 'abu',
+  phone: '8234565677',
+  email: 'abu1233345@gmail.com',
+  getInfo: function() {
+    return `Name: ${this.name}, Phone: ${this.phone}, Email: ${this.email}`;
+  }
+};
+function printContactInfo(contact) {
+  console.log(contact.getInfo());
+}
+printContactInfo(contact1);
+printContactInfo(contact2);
+
+      </script>
+      </body>
+      </html>

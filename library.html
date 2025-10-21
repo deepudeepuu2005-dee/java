@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library</title>
+    </head>
+    <body>
+        <h2>library</h2>
+        <script>
+        let library = {
+              name: "City Library",
+              author: "John Doe",
+              year : 2020,
+              getSummary: function(){
+                  return this.name + " " + this.author + " " + this.year;
+              }
+        };
+      function printLibrarySummary() {
+  console.log(library.getSummary());
+}
+
+printLibrarySummary();
+
+</script>
+    </body>
+</html>
