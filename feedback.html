@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    </head>
+    <body>
+        <h2>feedback</h2>
+<script>
+   var feedback = "   I loved the FOOD and the service!   ";
+    // Trim 
+        var trimfeed= feedback.trim();
+        console.log("Trimmed Feedback:",trimfeed);
+        //lowercase
+        var lowfeedback= feedback.toLowerCase();
+        console.log("Lowercase Feedback:",lowfeedback);
+        //replace
+        var refeedback= feedback.replace("food","ambience");
+        console.log("Replaced Feedback:",refeedback);
+        //length
+        var indexfeedback=feedback.indexOf("service");
+        console.log("Index of 'service':",indexfeedback);
+        //spilt
+       var Array = feedback.split(" ");
+        console.log("Words array:", Array);
+</script>
+    </body>
+
+</html>

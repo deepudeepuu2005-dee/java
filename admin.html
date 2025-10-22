@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    </head>
+    <body>
+        <h2>Admin Panel</h2>
+<script>
+   // Create userProfile object
+const userProfile = {
+  username: " CoolUser99 ",
+  bio: " I LOVE coding! JavaScript is Great!!! "
+};
+
+// Function to clean user bio
+function cleanUserBio(profile) {
+  const cleanedUsername = profile.username.trim().toLowerCase();
+  let cleanedBio = profile.bio.trim().toLowerCase();
+  cleanedBio = cleanedBio.replace(/javascript/g, "JS");
+  const bioLength = cleanedBio.length;
+
+  return {
+    username: cleanedUsername,
+    bio: cleanedBio,
+    bioLength: bioLength
+  };
+}
+
+// Call the function and log the result
+const cleanedProfile = cleanUserBio(userProfile);
+console.log(cleanedProfile);
+</script>
+    </body>     
+</html>
+
+  
