@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+
+<button id="check-access">Check Admin Access</button>
+<p id="access-message"></p>
+
+
+<script>
+// Create user object
+const user = {
+  name: 'John Doe',
+  age: 25,
+  isAdmin: true
+};
+
+// first
+const checkAccessButton = document.getElementById('check-access');
+const accessMessageElement = document.getElementById('access-message');
+
+// age
+checkAccessButton.addEventListener('click', function() {
+  console.log('age' in user);
+
+  //admin
+  const hasAccess = user.isAdmin && user.age >= 18;
+  accessMessageElement.textContent = hasAccess ? 'Access Granted' : 'Access Denied';
+
+  // Delete age 
+  delete user.age;
+  console.log(user);
+});
+ </script>
+    </body>
+    </html>

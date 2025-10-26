@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Page</title>
+</head>
+<body>  
+    <h1>Welcome to the Online Page</h1>
+    <button onclick="document.getElementById('order').innerHTML=order()">order now</button>
+
+<script>
+  
+// Create order object
+const order = {
+  itemName: 'Laptop',
+  isDelivered: true,
+  daysSinceDelivery: 5
+};
+
+// item
+console.log('itemName' in order);
+
+//daysSinceDelivery 
+delete order.daysSinceDelivery;
+console.log(order);
+
+//return
+const isEligible = order.isDelivered && order.daysSinceDelivery < 7;
+console.log(isEligible ? 'Eligible for Return' : 'Return Period Expired');
+    
+</script>
+   
+    </body>
+</html>
