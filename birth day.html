@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>birth day</h2>
+
+<p id="demo"></p>
+
+<script>
+const friend = {
+  name: 'John',
+  birthDate: '1999-07-05'
+};
+
+// output
+function getBirthdayDetails(friend) {
+  const birthDate = new Date(friend.birthDate);
+  const year = birthDate.getFullYear();
+  const month = birthDate.toLocaleString('default', { month: 'long' });
+  const day = birthDate.getDate();
+  const age = new Date().getFullYear() - year;
+
+  console.log(`${friend.name} was born on ${day} ${month}, ${year} and is ${age} years old.`);
+}
+getBirthdayDetails(friend);
+
+
+
+</script>
+
+</body>
+</html>
