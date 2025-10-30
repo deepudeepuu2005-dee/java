@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Example</title>   
+</head>
+<body>
+    <h1>Number Example</h1>
+    <p id="demo"> "My son is 12 years old. Our flat number is 45 and contact is 9876543210."</p>
+    <script>
+        const str = document.getElementById("demo").innerText;
+       document.getElementById("demo").innerHTML = /i/.test(str);
+
+        const numbers = str.replace(/\d+/g ,'NUMBER');
+         document.getElementById("demo").innerHTML = numbers;
+        
+
+
+
+
+    </script>
+    </body>
+</html>

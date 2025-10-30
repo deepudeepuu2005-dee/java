@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>system Example</title>   
+</head>
+<body>
+    <h1>system</h1>
+    <p id="demo">I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.</p>
+    <script>
+       const comment = document.getElementById("demo").innerText; 
+        const bannedWords = ['bad', 'ugly', 'stupid'];
+        const bannedRegex = new RegExp(bannedWords.join('|'), 'gi');
+        const cleanedComment = comment.replace(bannedRegex, '***');
+ document.getElementById("demo").innerHTML = cleanedComment; 
+
+        const number= cleanedComment.match(/\d+/g).length;
+        //document.getElementById("demo").innerHTML = number; 
+        console.log(number);
+       
+const capitalizedWordCount = comment.match(/\b[A-Z][a-z]*\b/g).length;
+   //document.getElementById("demo").innerHTML = capitalizedWordCount ; 
+    console.log(capitalizedWordCount);
+       
+    
+
+    </script>
+    </body>
+</html>
