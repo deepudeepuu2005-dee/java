@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>    
+</head>
+<body>
+    <h1>Thank You for Your Submission!</h1>
+    <script>
+        const jsonData = '{"name": "John Doe", "email": "john@example.com", "feedback": "Thank you for your support!"}';
+
+const processFeedback = (jsonString) => {
+  try {
+    const feedbackData = JSON.parse(jsonString);
+    if
+     (feedbackData.feedback.toLowerCase().includes('thank')) 
+     {
+      console.log('Positive feedback received');
+    } 
+    else {
+      console.log('Feedback noted');
+    }
+  } 
+  catch (error)
+   {
+    console.error('Error parsing JSON:', error.message);
+  }
+};
+
+processFeedback(jsonData);
+
+        </script>
+    </body>
+    

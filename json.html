@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title> 
+        </head>
+
+        <body>
+            <script>
+                
+const jsonData = '{"name": "John Doe", "email": "john@example.com", "message": "Hello, world!"}';
+  
+   const processUserData = (jsonString) => {
+  try {
+    const userData = JSON.parse(jsonString);
+    console.log(`Message received from ${userData.name}`);
+  } catch (error) {
+    console.error('Error parsing JSON:', error.message);
+  }
+};
+
+processUserData(jsonData);
+
+            </script>
+        </body>
