@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Information</title>
+</head>
+<body>
+    <h1>Email Information</h1>
+    <p id="demo"></p>
+
+    <script>
+        class System {
+            constructor(name, age, email) {
+                this._name = name;
+                this._age = age;
+                this._email = email;
+            }
+
+            // Getters
+            get name() {
+                return this._name;
+            }
+
+            get age() {
+                return this._age;
+            }
+
+            get email() {
+                return this._email;
+            }
+
+            // Setter for email
+            set email(newEmail) {
+                if (!newEmail.includes("@")) {
+                    throw new Error("Invalid email address");
+                }
+                this._email = newEmail;
+            }
+        }
+
+
+        const user = new System("Deepu", 20, "example@gmail.com");
+
+    
+        document.getElementById("demo").innerHTML =
+            "Name: " + user.name + "<br>" +
+            "Age: " + user.age + "<br>" +
+            "Email: " + user.email;
+
+    
+        try {
+            user.email = "invalidEmail";
+        } catch (e) {
+            document.getElementById("demo").innerHTML += "<br><br>Email: " + e.message;
+        }
+
+        user.email = "deepu123@gmail.com";
+        document.getElementById("demo").innerHTML +=
+            "<br><br> Email: " + user.email;
+
+        console.log("Name: " + user.name);
+        console.log("Age: " + user.age);
+        console.log("Email: " + user.email);
+    </script>
+</body>
+</html>

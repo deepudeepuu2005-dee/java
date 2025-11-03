@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Information</title> 
+</head>
+<body>
+  <h1>Book Information</h1>
+  <p id="demo"></p>
+
+  <script>
+    class Book {
+      constructor(title, author, price) {
+        this._title = title;
+        this._author = author;
+        this._price = price;
+      }
+
+      // Getters
+      get name() {
+        return this._title;
+      }
+
+      get author() {
+        return this._author;
+      }
+
+      get price() {
+        return this._price;
+      }
+
+      // Setter
+      set price(price) {
+        if (price < 0) {
+          throw new Error("wrong price");
+        } else {
+          this._price = price;
+        }
+      }
+    }
+
+    const book = new Book("The Great Gatsby", "F. Scott Fitzgerald", 50);
+    document.getElementById("demo").innerHTML ="Title: " + book.name + "<br>" +"Author: " + book.author + "<br>" + "Price: $" + book.price;
+   // console.log("Title: " + book.name);
+    //console.log("Author: " + book.author);
+    //console.log("Price: " + book.price);
+
+  book.price = 60;
+    document.getElementById("demo").innerHTML += "<br>" + "Updated Price: $" + book.price;
+    
+    try {
+      book.price = -10;
+    } catch (e) {
+      document.getElementById("demo").innerHTML += "<br>" + "price: " + e.message;
+    }
+
+    book.price1 = 70;
+    document.getElementById("demo").innerHTML += "<br>" + "Final Price: $" + book.price1;
+
+   document.getElementById("demo").innerHTML += "<br>"+ "title: " + book.name + "<br>" + "author: " + book.author + "<br>" + "price: " + book.price1;
+
+  </script>
+</body>
+</html>
