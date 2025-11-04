@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Page</title>
+  <style>
+    #feedback-display {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    #feedback-display:hover {
+      color: blue;
+    }
+
+    #confirmation-message {
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feedback Form</h1>
+  <form id="feedback-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback"></textarea><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <div id="feedback-display"></div>
+  <div id="confirmation-message"></div>
+
+  <script>
+    const form = document.getElementById('feedback-form');
+const feedbackDisplay = document.getElementById('feedback-display');
+const confirmationMessage = document.getElementById('confirmation-message');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const feedback = document.getElementById('feedback').value;
+
+  feedbackDisplay.innerHTML = `
+    <h2>Feedback from ${name}:</h2>
+    <p>${feedback}</p>
+  `;
+  confirmationMessage.textContent = 'Thanks for your feedback!';
+  confirmationMessage.style.display = 'block';
+  setTimeout(() => {
+    confirmationMessage.style.display = 'none';
+  }, 5000);
+  form.reset();
+});
+  </script>
+</body>
+</html>
